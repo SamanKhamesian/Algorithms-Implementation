@@ -35,14 +35,10 @@ int main()
 	int* A = new int[n];
 
 	for (int i = 0; i < n; i++)
-	{
 		cin >> A[i];
-	}
 
 	selection_sort(A, n);
 
 	for (int i = 0; i < n; i++)
-	{
 		cout << A[i] << " ";
-	}
 }

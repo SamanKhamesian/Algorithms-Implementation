@@ -12,27 +12,19 @@ int n, dist[MAX_SIZE][MAX_SIZE], dp[MAX_SIZE][1 << MAX_SIZE];
 int tsp(int pos, int bitmask) 
 {
 	if (bitmask == (1 << n) - 1)
-	{
 		return dist[pos][0];
-	}
 
 	else if (dp[pos][bitmask] != -1)
-	{
 		return dp[pos][bitmask];
-	}
 
 	else
 	{
 		int ans = 2000000000;
 
 		for (int nxt = 0; nxt < n; nxt++)
-		{
 			if (nxt != pos && !(bitmask & (1 << nxt)))
-			{
 				ans = min(ans, dist[pos][nxt] + tsp(nxt, bitmask | (1 << nxt)));
-			}
-		}
-
+			
 		return dp[pos][bitmask] = ans;
 	}
 }

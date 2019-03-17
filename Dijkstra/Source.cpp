@@ -17,17 +17,13 @@ class comparator
 	public:
 
 		bool operator()(pair<int, int> &child1, pair<int, int> &child2)
-		{
 			return child1.second > child2.second;
-		}
 };
 
 void dijkstra(int start)
 {
 	for (int i = 0; i < SIZE; i++)
-	{
 		dis[i] = INF;
-	}
 
 	dis[start] = 0;
 	priority_queue<pair<int, int>, vector<pair<int, int>>, comparator> pq;
@@ -70,9 +66,5 @@ int main()
 	dijkstra(1);
 
 	for (int i = 1; i <= n ; i++)
-	{
 		cout << i << " " << dis[i] << endl;
-	}
-
-	return 0;
 }

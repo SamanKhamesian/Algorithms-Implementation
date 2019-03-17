@@ -20,16 +20,12 @@ void merge(long long start, long long mid, long long end)
 	vector <long long> B;
 
 	for (long long i = start; i < mid + 1; i++)
-	{
 		A.push_back(myList[i]);
-	}
 
 	A.push_back(INF);
 
 	for (long long i = mid + 1; i <= end; i++)
-	{
 		B.push_back(myList[i]);
-	}
 
 	B.push_back(INF);
 
@@ -49,9 +45,7 @@ void merge(long long start, long long mid, long long end)
 	}
 
 	for (long long i = 0; i < temp.size(); i++)
-	{
 		myList[start + i] = temp[i];
-	}
 }
 
 void inversion(long long start, long long end)
@@ -81,7 +75,5 @@ int main()
 	inversion(0, n - 1);
 
 	for (int i = 0; i < n; i++)
-	{
 		cout << myList[i] << " ";
-	}
 }

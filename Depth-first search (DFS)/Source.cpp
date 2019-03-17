@@ -17,12 +17,8 @@ void dfs(int current, int p)
 	parent[current] = p;
 
 	for (int i = 0; i < list[current].size(); i++)
-	{
 		if (!marked[list[current][i]])
-		{
 			dfs(list[current][i], current);
-		}
-	}
 }
 
 int main()

@@ -18,9 +18,7 @@ void bellmanFord(int n, int m, int start)
 	static int pro = 0;
 
 	for (int i = 0; i < SIZE; i++)
-	{
 		dis[i] = MAX;
-	}
 
 	dis[start] = 0;
 
@@ -42,10 +40,8 @@ void bellmanFord(int n, int m, int start)
 		{
 			pair<int, int> child = graph[i][j];
 
-			if (dis[child.first] > dis[i] + child.second)
-			{                
+			if (dis[child.first] > dis[i] + child.second)           
 				hasNegativeCycle = true;
-			}
 		}
 	}
 
@@ -61,7 +57,6 @@ int main()
 	for (int i = 0; i < m; i++)
 	{
 		cin >> x >> y >> w;
-
 		graph[x].push_back(make_pair(y, w));
 		graph[y].push_back(make_pair(x, w));
 	}
@@ -69,7 +64,5 @@ int main()
 	bellmanFord(n, m, 1);
 
 	for (int i = 0; i < n; i++)
-	{
 		cout << i << " " << dis[i] << endl;
-	}
 }
