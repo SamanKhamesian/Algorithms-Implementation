@@ -6,15 +6,11 @@
 using namespace std;
 
 #define SIZE 100010
-
 #define MAX 9999999
 
 int dis[SIZE];
-
 int parent[SIZE];
-
 bool hasNegativeCycle = false;
-
 vector< vector< pair< int, int > > > graph;
 
 void bellmanFord(int n, int m, int start)
@@ -35,7 +31,6 @@ void bellmanFord(int n, int m, int start)
 			for (int k = 0; k < graph[j].size(); k++)
 			{
 				pair<int, int> child = graph[j][k];
-
 				dis[child.first] = min(dis[child.first], dis[j] + child.second);
 			}
 		}
@@ -60,9 +55,7 @@ void bellmanFord(int n, int m, int start)
 int main()
 {
 	int n, m, x, y, w;
-
 	cin >> n >> m;
-
 	graph.resize(n);
 
 	for (int i = 0; i < m; i++)
@@ -70,7 +63,6 @@ int main()
 		cin >> x >> y >> w;
 
 		graph[x].push_back(make_pair(y, w));
-
 		graph[y].push_back(make_pair(x, w));
 	}
 
